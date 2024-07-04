@@ -9,24 +9,44 @@ def acMain(ac_version):
     ac.setBackgroundOpacity(app_window, 0)
     
     button_cockpit = ac.addButton(app_window, "Cockpit View") #creates button to switch camera
-    ac.setPosition(button_cockpit, 10, 10)
+    ac.setPosition(button_cockpit, 0, 40)
     ac.addOnClickedListener(button_cockpit, onCockpitView)
     
     button_hood = ac.addButton(app_window, "Hood View") #creates button to switch camera
-    ac.setPosition(button_hood, 10, 40)
+    ac.setPosition(button_hood, 0, 70)
     ac.addOnClickedListener(button_hood, onHoodView)
     
     button_chase = ac.addButton(app_window, "Chase View") #creates button to switch camera
-    ac.setPosition(button_chase, 10, 70)
+    ac.setPosition(button_chase, 0, 100)
     ac.addOnClickedListener(button_chase, onChaseView)
+
+    button_copter = ac.addButton(app_window, "Copter View") #creates button to switch camera
+    ac.setPosition(button_copter, 0, 130)
+    ac.addOnClickedListener(button_chase, oncopterView)
+
+    button_flex = ac.addButton(app_window, "Flex View") #creates button to switch camera
+    ac.setPosition(button_flex, 0, 160)
+    ac.addOnClickedListener(button_flex, onflexView)
     
     return "Camera Switcher"
 
 def onCockpitView(*args):
-    ac.setCameraMode(0)  # Cockpit view
+    ac.setCameraMode(0)  
 
 def onHoodView(*args):
-    ac.setCameraMode(1)  # Hood view
+    ac.setCameraMode(1)  
 
 def onChaseView(*args):
-    ac.setCameraMode(2)  # Chase view
+    ac.setCameraMode(2)
+
+def oncopterView(*args):
+    ac.setCameraMode(4)
+
+def onflexView(*args):
+    ac.setCameraMode(5) 
+
+    # 1 Hood view
+    # 3 Cinematics
+    # 4 Helicopter
+    # 5 Helicopter
+    # 8 in car w steering
